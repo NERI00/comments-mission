@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
-    requestAllComments =  () => {
-        let CmList =  getCommentsFromServer.responseJSON
+    requestAllComments = () => {
+        let CmList = getCommentsFromServer.responseJSON
         displaycommentsListInTable(CmList)
     }
 
@@ -68,10 +68,10 @@ $(document).ready(function () {
     }
 
 
-        $("#filter-input").keyup(function () {
-            $("#main-table td.name:contains('" + $(this).val() + "')").parent().show();
-            $("#main-table td.name:not(:contains('" + $(this).val() + "'))").parent().hide();
-        });
+    $("#filter-input").keyup(function () {
+        $("#main-table td.name:contains('" + $(this).val() + "')").parent().show();
+        $("#main-table td.name:not(:contains('" + $(this).val() + "'))").parent().hide();
+    });
 
 
 });
