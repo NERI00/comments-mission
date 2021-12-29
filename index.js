@@ -8,6 +8,7 @@ $(document).ready(function () {
     requestCommentsById = () => {
         let CmList = getCommentsFromServer.responseJSON
         let commentsById = Number(document.getElementById("search-Input").value)
+        clearTable()
         displaycommentsByIdListInTable(CmList, commentsById)
     }
 
@@ -33,7 +34,6 @@ $(document).ready(function () {
     })
 
     const displaycommentsListInTable = (commentsList) => {
-        const commentsTableBody = document.getElementById("todo-table-body")
         let tableRows = ''
         for (let commentsElement of commentsList) {
 
@@ -48,6 +48,7 @@ $(document).ready(function () {
                         `
 
         }
+        $("#todo-table-body").empty()
         $("#todo-table-body").append(tableRows)
     }
     const displaycommentsByIdListInTable = (commentsList, commentsById) => {
@@ -64,6 +65,7 @@ $(document).ready(function () {
                         `
 
         }
+        $("#todo-table-body").empty()
         $("#todo-table-body").append(tableRows)
     }
 
@@ -72,6 +74,5 @@ $(document).ready(function () {
         $("#main-table td.name:contains('" + $(this).val() + "')").parent().show();
         $("#main-table td.name:not(:contains('" + $(this).val() + "'))").parent().hide();
     });
-
 
 });
